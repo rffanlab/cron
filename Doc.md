@@ -24,3 +24,21 @@
 	..
 	c.Stop()  // Stop the scheduler (does not stop any jobs already running). 结束队列（并不意味着结束已经在运行的任务）
 ```
+
+
+## CRON 表达式格式
+
+一个CRON表达式通过一组6个空格的字符串来表示时间（这一块对于Linux下crontab熟悉的小伙伴应该可以略过，差不多。）
+
+```
+	
+	Field name   | Mandatory? | Allowed values  | Allowed special characters
+	----------   | ---------- | --------------  | --------------------------
+	Seconds      | Yes        | 0-59            | * / , -
+	Minutes      | Yes        | 0-59            | * / , -
+	Hours        | Yes        | 0-23            | * / , -
+	Day of month | Yes        | 1-31            | * / , - ?
+	Month        | Yes        | 1-12 or JAN-DEC | * / , -
+	Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
+```
+注意：Month（月）Day of week （一个礼拜里的第几天）不是大小写敏感的
